@@ -68,7 +68,7 @@ html.dark-mode .card{
 .card h3, .card h4{
   font-family: var(--serif);
   font-weight:700;
-  margin:0 0 -10px 0 -20px; /* << colle le texte juste en dessous */
+  margin:0 0 -10px; /* << colle le texte juste en dessous */
   color:inherit;
 }
 
@@ -220,6 +220,7 @@ def card_tweet_item(st, item: dict):
     title = item.get("title") or "Post"
     text  = item.get("description") or ""
     url   = item.get("url") or "#"
+    img     = _src(item.get("image_url")) 
 
     # Handle/author/date si disponibles
     handle = item.get("handle") or item.get("author") or ""
@@ -238,6 +239,7 @@ def card_tweet_item(st, item: dict):
         <div><b>{title}</b> <span class="meta">{'' if not meta else '· ' + meta if handle else meta}</span></div>
         <div class="meta">{handle}</div>
       </div>
+      <img class="hero-below" src="{img}" alt="">
     </div>
     <div>{_truncate(text, 280)}</div>
     """

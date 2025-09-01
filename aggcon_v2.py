@@ -566,7 +566,7 @@ def adapter_rss(source_url: str, source_name: str, source_platform: str, default
             img = extract_image_from_entry(entry, link)
 
         #exclusion des sources sans photo de profils càd tout sauf les tweets
-        if category != "tweet":
+        if category != "card_tweet":
             pfp = None
         else:
             pfp = extract_profile_image(entry, link)
@@ -762,6 +762,8 @@ from style import COMPONENT_CSS, render_item
 
 def show_feed_streamlit():
     session = SessionLocal()
+    st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
+
     st.title("📱 Mon Feed")
 
 #-----------Choix de plateforme --------------------
