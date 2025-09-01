@@ -57,7 +57,8 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 db_file = Path(__file__).parent / "mydb.db"
 
 # crée l’engine SQLite avec le chemin absolu
-engine = create_engine(f"sqlite:///{db_file}")SessionLocal = sessionmaker(bind=engine)
+engine = create_engine(f"sqlite:///{db_file}")
+SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base()
 
 class Content(Base):
