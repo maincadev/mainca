@@ -1,6 +1,8 @@
 """
 📌 Git pense-bête
 
+4. Récupérer les changements depuis GitHub :
+   git pull origin master   # ou git pull origin main
 1. Ajouter tous les fichiers modifiés :
    git add -A
 
@@ -10,8 +12,7 @@
 3. Envoyer sur GitHub :
    git push origin master   # ou git push origin main
 
-4. Récupérer les changements depuis GitHub :
-   git pull origin master   # ou git pull origin main
+
 """
 
 
@@ -28,7 +29,10 @@ import json
 import math 
 from itertools import islice
 from typing import Optional, List, Dict
+from pathlib import Path
 
+data_file = Path(__file__).parent / "sources_actuelles.json"
+print(data_file)
 
 RUN_WORKER = False            # mets True si tu veux relancer l’ingestion
 RUN_BACKFILL_IMAGES = False    # <-- lance une fois pour remplir les images manquantes
@@ -672,8 +676,7 @@ def run_worker():
     """
     session = SessionLocal()
     #---------------------------------Importe les sources qui sont une liste de dictionnaire, avec notamment les liens RSS-----------------------
-    data_file = Path(__file__).parent / "sources_actuelles.json"
-    with open(datafile, encoding="utf-8") as f:
+    with open(data_file, encoding="utf-8") as f:
         sources = json.load(f)
     #----------------------------------------------------------------------------------------
 
