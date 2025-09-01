@@ -1,0 +1,8 @@
+streamlit
+pandas
+requests
+sqlalchemy
+pillow
+feedparser
+beautifulsoup4
+tqdm
