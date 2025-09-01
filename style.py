@@ -236,7 +236,6 @@ def card_tweet_item(st, item: dict):
     <div class="tweet-header">
       <img class="avatar" src="{avatar_src}" alt="avatar">
       <div>
-        <div><b>{title}</b> <span class="meta">{'' if not meta else '· ' + meta if handle else meta}</span></div>
         <div class="meta">{handle}</div>
       </div>
       <img class="hero-below" src="{img}" alt="">
