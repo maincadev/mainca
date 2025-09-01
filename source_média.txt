@@ -1,0 +1,43 @@
+            # --- Presse ---
+        {"type": "rss", "platform": "Libération", "name": "Libération (Tout)", "url": "https://www.liberation.fr/arc/outboundfeeds/rss-all/?outputType=xml", "category": "Article"},
+        {"type": "rss", "platform": "Le Monde", "name": "Le Monde - À la Une", "url": "https://www.lemonde.fr/rss/une.xml", "category": "Article"},
+
+        # --- YouTube (RSS) ---
+        {"type": "rss", "platform": "YouTube", "name": "Le Monde (YouTube)", "url": "https://www.youtube.com/feeds/videos.xml?user=LeMonde", "category": "Vidéo"},
+        {"type": "rss", "platform": "YouTube", "name": "franceinfo", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCO6K_kkdP-lnSCiO3tPx7WA", "category": "Vidéo"},
+        {"type": "rss", "platform": "YouTube", "name": "France Culture", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCd5DKToXYTKAQ6khzewww2g", "category": "Vidéo"},
+
+        # --- Médias indépendants ---
+        {"type": "rss", "platform": "Blast", "url": "https://api.blast-info.fr/rss.xml", "name": "Blast"},
+
+        # --- Chaînes YouTube ---
+        {"type": "rss", "platform": "YouTube", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCyJDHgrsUKuWLe05GvC2lng", "name": "StupidEconomist"},
+        {"type": "rss", "platform": "YouTube", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVjzunJmfNx4YtW7d5oQg1g", "name": "Eurêka"},
+        {"type": "rss", "platform": "YouTube", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCQgWpmt02UtJkyO32HGUASQ", "name": "Thinkerview"},
+        {"type": "rss", "platform": "YouTube", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCj4bY7EoypA4lY7j4mVt4Jw", "name": "Usul & Cotentin"},
+        {"type": "rss", "platform": "YouTube", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCt6wG0g3mwa5rAfR2zY5XXQ", "name": "Osons Causer"},
+        {"type": "rss", "platform": "YouTube", "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCJ0-oS6QFbA8l6jEO3aAcfQ", "name": "Le Média TV"},
+        
+
+        # --- Podcasts / Radios ---
+        {"type": "podcast", "platform": "France Info", "url": "https://radiofrance-podcast.net/podcast09/rss_14088.xml", "name": "Les Informés"},
+        {"type": "podcast", "platform": "France Culture", "url": "https://radiofrance-podcast.net/podcast09/rss_10076.xml", "name": "Entendez-vous l’éco ?"},
+        {"type": "podcast", "platform": "France Culture", "url": "https://radiofrance-podcast.net/podcast09/rss_10322.xml", "name": "La Grande Table"},
+        {"type": "podcast", "platform": "France Culture", "url": "https://radiofrance-podcast.net/podcast09/rss_14312.xml", "name": "Cultures Monde"},
+
+        # --- Revues académiques ---
+        {"type": "rss", "platform": "Cairn", "url": "https://shs.cairn.info/rss/discipline/11/numeros/3?lang=fr", "name": "Sociologie"},
+        {"type": "rss", "platform": "Cairn", "url": "https://shs.cairn.info/rss/revue/RFS?lang=fr", "name": "Revue Française de Sociologie"},
+        {"type": "rss", "platform": "Cairn", "url": "https://shs.cairn.info/rss/revue/rce?lang=fr", "name": "Regards Croisés sur l’Économie"},
+        {"type": "rss", "platform": "Cairn", "url": "https://shs.cairn.info/rss/revue/ARSS?lang=fr", "name": "Actes de la recherche en sciences sociales"},
+        {"type": "rss", "platform": "Esprit", "url": "https://esprit.presse.fr/rss/news", "name": "Esprit"},
+        {"type": "rss", "platform": "La Vie des Idées", "url": "https://laviedesidees.fr/spip.php?page=backend", "name": "La Vie des Idées"},
+        {"type": "rss", "platform": "Reporterre", "url": "https://reporterre.net/spip.php?page=backend", "name": "Reporterre"},
+
+        # --- Bluesky (microblog) ---
+        {"type": "rss", "platform": "Bluesky", "url": "https://bsky.app/profile/thomaspiketty.bsky.social/rss", "name": "Thomas Piketty"},
+        {"type": "rss", "platform": "Bluesky", "url": "https://bsky.app/profile/gabrielzucman.bsky.social/rss", "name": "Gabriel Zucman"},
+        {"type": "rss", "platform": "Bluesky", "url": "https://bsky.app/profile/francoisruffin.fr/rss", "name": "François Ruffin"},
+        {"type": "rss", "platform": "Bluesky", "url": "https://bsky.app/profile/manonaubryfr.bsky.social/rss", "name": "Manon Aubry"},
+        {"type": "rss", "platform": "Bluesky", "url": "https://bsky.app/profile/aurorelalucq.bsky.social/rss", "name": "Aurore Lalucq"}]
+

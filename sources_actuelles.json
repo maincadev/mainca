@@ -1,0 +1,354 @@
+[
+  {
+    "type": "rss",
+    "platform": "Libération",
+    "name": "Libération (Tout)",
+    "url": "https://www.liberation.fr/arc/outboundfeeds/rss-all/?outputType=xml",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Le Monde",
+    "name": "Le Monde - À la Une",
+    "url": "https://www.lemonde.fr/rss/une.xml",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Alternatives Économiques",
+    "name": "Alternatives Économiques",
+    "url": "https://www.alternatives-economiques.fr/rss.xml",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "AOC",
+    "name": "AOC",
+    "url": "https://aoc.media/feed/",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Elucid",
+    "name": "Elucid",
+    "url": "https://elucid.media/feed",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Le Grand Continent",
+    "name": "Le Grand Continent",
+    "url": "https://legrandcontinent.eu/fr/feed/",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Le Monde (YouTube)",
+    "url": "https://www.youtube.com/feeds/videos.xml?user=LeMonde",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "franceinfo",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCO6K_kkdP-lnSCiO3tPx7WA",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "France Culture",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCd5DKToXYTKAQ6khzewww2g",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Grand Continent (YouTube)", 
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCFxDBEN7N1QdECRddUvPivQ",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Blast",
+    "name": "Blast",
+    "url": "https://api.blast-info.fr/rss.xml",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "StupidEconomist",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCyJDHgrsUKuWLe05GvC2lng",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Thinkerview",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCQgWpmt02UtJkyO32HGUASQ",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Le Média",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCT67YOMntJxfRnO_9bXDpvw",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Data Gueule",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCm5wThREh298TkK8hCT9HuA",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Heu?reka",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC7sXGI8p8PvKosLWagkK9wQ",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "podcast",
+    "platform": "France Info",
+    "name": "Les Informés",
+    "url": "https://radiofrance-podcast.net/podcast09/rss_14088.xml",
+    "category": "podcast_audio",
+    "langue": "français"
+  },
+  {
+    "type": "podcast",
+    "platform": "France Culture",
+    "name": "Entendez-vous l’éco ?",
+    "url": "https://radiofrance-podcast.net/podcast09/rss_10076.xml",
+    "category": "podcast_audio",
+    "langue": "français"
+  },
+  {
+    "type": "podcast",
+    "platform": "France Culture",
+    "name": "La Grande Table",
+    "url": "https://radiofrance-podcast.net/podcast09/rss_10322.xml",
+    "category": "podcast_audio",
+    "langue": "français"
+  },
+
+  {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "Sociologie",
+    "url": "https://shs.cairn.info/rss/discipline/11/numeros/3?lang=fr",
+    "category": "académique",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "Revue Française de Sociologie",
+    "url": "https://shs.cairn.info/rss/revue/RFS?lang=fr",
+    "category": "académique",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "Regards Croisés sur l’Économie",
+    "url": "https://shs.cairn.info/rss/revue/rce?lang=fr",
+    "category": "académique",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "Actes de la recherche en sciences sociales",
+    "url": "https://shs.cairn.info/rss/revue/ARSS?lang=fr",
+    "category": "académique",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Esprit",
+    "name": "Esprit",
+    "url": "https://esprit.presse.fr/rss/news",
+    "category": "académique",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "La Vie des Idées",
+    "name": "La Vie des Idées",
+    "url": "https://laviedesidees.fr/spip.php?page=backend",
+    "category": "académique",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Reporterre",
+    "name": "Reporterre",
+    "url": "https://reporterre.net/spip.php?page=backend",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Terra Nova",
+    "name": "Terra Nova",
+    "url": "https://tnova.fr/rss/",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Veblen Institute",
+    "name": "Veblen Institute",
+    "url": "https://www.veblen-institute.org/spip.php?page=backend",
+    "category": "rapport",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Sénat",
+    "name": "Rapports du Sénat",
+    "url": "https://www.senat.fr/rss/rapports.rss",
+    "category": "rapport",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Sénat",
+    "name": "Vidéos du Sénat",
+    "url": "http://videos.senat.fr/video/videos.rss",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Assemblée Nationale",
+    "name": "Rapports & Études",
+    "url": "https://www2.assemblee-nationale.fr/feeds/detail/ID_419610/(type)/instance",
+    "category": "rapport",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Our World in Data",
+    "name": "OWID (Tout)",
+    "url": "https://ourworldindata.org/atom.xml",
+    "category": "dataviz",
+    "langue": "anglais"
+  },
+  {
+    "type": "rss",
+    "platform": "Our World in Data",
+    "name": "OWID (Insights)",
+    "url": "https://ourworldindata.org/atom-data-insights.xml",
+    "category": "dataviz",
+    "langue": "anglais"
+  },
+  {
+    "type": "rss",
+    "platform": "Parlement Européen",
+    "name": "OEIL",
+    "url": "https://oeil.secure.europarl.europa.eu//oeil/fr/search/export/RSS?fullText.mode=EXACT_WORD&reference.type=EPdoc&resultsOnly=true",
+    "category": "rapport",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "ENS Lyon",
+    "name": "SES ENS Lyon",
+    "url": "https://ses.ens-lyon.fr/actualites/rapports-etudes-et-4-pages/rapports-etudes-et-4-pages/rss",
+    "category": "rapport",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "ATTAC",
+    "name": "Attac France",
+    "url": "https://france.attac.org/spip.php?page=backend",
+    "category": "rapport",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Public Sénat (YouTube)",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCHGFbA0KWBgf6gMbyUCZeCQ",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Public Sénat",
+    "name": "Public Sénat",
+    "url": "https://www.publicsenat.fr/feed",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "Nouvelles Cahiers du Conseil Constitutionnel",
+    "url": "https://shs.cairn.info/rss/revue/NCAE?lang=fr",
+    "category": "académique",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "Population",
+    "url": "https://shs.cairn.info/rss/revue/POX?lang=fr",
+    "category": "académique",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Reddit",
+    "name": "PoliticalDiscussion",
+    "url": "https://www.reddit.com/r/PoliticalDiscussion/.rss",
+    "category": "forum",
+    "langue": "anglais"
+  },
+  {
+    "type": "rss",
+    "platform": "Reddit",
+    "name": "AskSocialScience",
+    "url": "https://www.reddit.com/r/AskSocialScience/.rss",
+    "category": "forum",
+    "langue": "anglais"
+  },
+ { "type": "rss", "platform": "Bluesky", "name": "Thomas Piketty", "url": "https://bsky.app/profile/thomaspiketty.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "Gabriel Zucman", "url": "https://bsky.app/profile/gabrielzucman.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "François Ruffin", "url": "https://bsky.app/profile/francoisruffin.fr/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "Manon Aubry", "url": "https://bsky.app/profile/manonaubryfr.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "Aurore Lalucq", "url": "https://bsky.app/profile/aurorelalucq.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "François Geerolf", "url": "https://bsky.app/profile/francoisgeerolf.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "Clémence Guetté", "url": "https://bsky.app/profile/clemenceguette.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "Michael Zemmour", "url": "https://bsky.app/profile/michaelzemmour.cpesr.fr/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "Johan Giry", "url": "https://bsky.app/profile/johangiry.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "Baptiste Coulmont", "url": "https://bsky.app/profile/coulmont.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "Sibylle Gollac", "url": "https://bsky.app/profile/sibylleglk.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "Annabelle Lallouche", "url": "https://bsky.app/profile/annabellallouch.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "Alexis Corbière", "url": "https://bsky.app/profile/alexiscorbiere.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "LFI", "url": "https://bsky.app/profile/lfi.bsky.social/rss", "category": "card_tweet", "langue": "français" },
+  { "type": "rss", "platform": "Bluesky", "name": "Écologiste & Social", "url": "https://bsky.app/profile/ecologisteetsocial.fr/rss", "category": "card_tweet", "langue": "français" }
+]

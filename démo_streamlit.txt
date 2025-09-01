@@ -1,0 +1,52 @@
+import streamlit as st
+
+st.title("🎛️ Démo : 3 façons de faire un menu de réglages")
+
+# =========================
+# 1. Sidebar
+# =========================
+st.sidebar.header("⚙️ Réglages (Sidebar)")
+theme_sidebar = st.sidebar.selectbox("Thème :", ["Clair", "Sombre"])
+detail_sidebar = st.sidebar.slider("Niveau de détail :", 1, 10, 5)
+adv_sidebar = st.sidebar.checkbox("Option avancée")
+
+st.subheader("1️⃣ Réglages via Sidebar")
+st.write(f"- Thème : {theme_sidebar}")
+st.write(f"- Niveau de détail : {detail_sidebar}")
+st.write(f"- Option avancée : {adv_sidebar}")
+
+st.divider()
+
+# =========================
+# 2. Expander
+# =========================
+with st.expander("⚙️ Réglages (Expander)"):
+    theme_exp = st.radio("Thème :", ["Clair", "Sombre"])
+    taille_exp = st.slider("Taille du texte :", 10, 30, 15)
+    notif_exp = st.checkbox("Activer notifications")
+
+st.subheader("2️⃣ Réglages via Expander")
+st.write(f"- Thème : {theme_exp}")
+st.write(f"- Taille du texte : {taille_exp}")
+st.write(f"- Notifications : {notif_exp}")
+
+st.divider()
+
+# =========================
+# 3. Tabs
+# =========================
+tab1, tab2 = st.tabs(["🎨 Apparence", "🔧 Options"])
+
+with tab1:
+    theme_tab = st.radio("Thème :", ["Clair", "Sombre"])
+    taille_tab = st.slider("Taille du texte :", 10, 30, 20)
+
+with tab2:
+    notif_tab = st.checkbox("Activer notifications")
+    volume_tab = st.slider("Volume :", 0, 100, 50)
+
+st.subheader("3️⃣ Réglages via Tabs")
+st.write(f"- Thème : {theme_tab}")
+st.write(f"- Taille du texte : {taille_tab}")
+st.write(f"- Notifications : {notif_tab}")
+st.write(f"- Volume : {volume_tab}")
