@@ -223,7 +223,7 @@ def card_tweet_item(st, item: dict):
     img     = _src(item.get("image_url")) 
 
     # Handle/author/date si disponibles
-    handle = item.get("handle") or item.get("author") or ""
+    handle = item.get("handle") or item.get("author") or item.get("source")
     meta   = _meta_line(handle or item.get("source"), item.get("published_at"), item.get("platform"))
 
     counts = item.get("counts") or []  # e.g. ["💬 32","↻ 48","❤ 230"]
@@ -236,11 +236,11 @@ def card_tweet_item(st, item: dict):
     <div class="tweet-header">
       <img class="avatar" src="{avatar_src}" alt="avatar">
       <div>
-        <div class="meta">{handle}</div>
+        <div class="meta">{meta}</div>
       </div>
-      <img class="hero-below" src="{img}" alt="">
     </div>
     <div>{_truncate(text, 280)}</div>
+    <img class="hero-below" src="{img}" alt="">
     """
     html += actions_html + "<!-- vide -->"
 
