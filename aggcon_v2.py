@@ -1,3 +1,20 @@
+"""
+📌 Git pense-bête
+
+1. Ajouter tous les fichiers modifiés :
+   git add -A
+
+2. Créer un commit avec un message :
+   git commit -m "Description de mes changements"
+
+3. Envoyer sur GitHub :
+   git push origin master   # ou git push origin main
+
+4. Récupérer les changements depuis GitHub :
+   git pull origin master   # ou git pull origin main
+"""
+
+
 from datetime import datetime
 import re
 import html
@@ -655,7 +672,8 @@ def run_worker():
     """
     session = SessionLocal()
     #---------------------------------Importe les sources qui sont une liste de dictionnaire, avec notamment les liens RSS-----------------------
-    with open("c:/Users/Emmy/Desktop/Main_channel/sources_actuelles.json", "r", encoding="utf-8") as f:
+    data_file = Path(__file__).parent / "sources_actuelles.json"
+    with open(datafile, encoding="utf-8") as f:
         sources = json.load(f)
     #----------------------------------------------------------------------------------------
 
@@ -740,7 +758,7 @@ def show_feed_streamlit():
     st.title("📱 Mon Feed")
 
 #-----------Choix de plateforme --------------------
-    platforms_list = sorted({s["platform"] for s in json.load(open("c:/Users/Emmy/Desktop/Main_channel/sources_actuelles.json", encoding="utf-8"))})
+    platforms_list = sorted({s["platform"] for s in json.load(open(data_file, encoding="utf-8"))})
     platform_choice = st.selectbox(
     "Choisir une plateforme",
     options=["Toutes"]+platforms_list)
