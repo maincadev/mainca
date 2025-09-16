@@ -2,7 +2,7 @@ name: Run Worker
 
 on:
   schedule:
-    - cron: "*/2 * * * *"   # toutes les 2 minutes (test)
+    - cron: "0 5 * * *"   # tous les jours à 06h UTC = 08h Paris (été)
   workflow_dispatch:         # lancement manuel possible
 
 jobs:
