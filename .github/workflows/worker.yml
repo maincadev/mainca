@@ -2,9 +2,8 @@ name: Run Worker
 
 on:
   schedule:
-    - cron: "*/2 * * * *"   # toutes les 2 minutes
+    - cron: "*/2 * * * *"   # toutes les 2 minutes (test)
   workflow_dispatch:         # lancement manuel possible
-
 
 jobs:
   run-worker:
@@ -13,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0   # récupère tout l’historique, nécessaire pour pull/rebase
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -33,5 +34,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add -f mydb.db
           git commit -m "Update DB (auto)" || echo "No changes"
-          git push
+          git pull --rebase origin main
+          git push origin main
+
 
