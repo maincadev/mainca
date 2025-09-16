@@ -39,7 +39,7 @@ import os
 
 data_file = Path(__file__).parent / "sources_actuelles.json"
 
-RUN_WORKER = False            # mets True si tu veux relancer l’ingestion
+RUN_WORKER = True            # mets True si tu veux relancer l’ingestion
 RUN_BACKFILL_IMAGES = False    # <-- lance une fois pour remplir les images manquantes
 RUN_STREAMLIT = True         # True si tu veux démarrer l'UI immédiatement
 RECREATE_DB = False  # set True if you want to drop and recreate the database
