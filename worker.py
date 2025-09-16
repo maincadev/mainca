@@ -4,7 +4,9 @@ from pathlib import Path
 from tqdm import tqdm
 
 # 👇 importe SessionLocal et Content depuis aggcon_v2
-from aggcon_v2 import SessionLocal, Content, adapter_rss, scan_pertinence, save_to_db
+from aggcon_v2 import SessionLocal, Content, adapter_rss, scan_pertinence, save_to_db,  Base, engine, ensure_schema
+Base.metadata.create_all(bind=engine)
+ensure_schema()
 
 data_file = Path(__file__).parent / "sources_actuelles.json"
 
@@ -39,13 +41,13 @@ def run_worker():
 
 
         items = adapter_rss(
-    source_url=src["url"],
-    source_name=src["name"],
-    source_platform=src["platform"],
-    default_type="ARTICLE",
-    category=src["category"],
-    max_posts=5
-)
+            source_url=src["url"],
+            source_name=src["name"],
+            source_platform=src["platform"],
+            default_type="ARTICLE",
+            category=src["category"],
+            max_posts=5
+            )
 
         
         for item in items:
@@ -67,3 +69,6 @@ def run_worker():
 
     print("✅ Worker terminé : contenus agrégés et stockés.")
 
+if __name__ == "__main__":
+
+    run_worker()

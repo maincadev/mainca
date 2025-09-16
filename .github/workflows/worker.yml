@@ -2,8 +2,9 @@ name: Run Worker
 
 on:
   schedule:
-    - cron: "0 */8 * * *"   # toutes les 8h
-  workflow_dispatch:        # tu peux aussi lancer manuellement
+    - cron: "*/2 * * * *"   # toutes les 2 minutes
+  workflow_dispatch:         # lancement manuel possible
+
 
 jobs:
   run-worker:
