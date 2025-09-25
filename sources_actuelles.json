@@ -221,7 +221,7 @@
     "platform": "Veblen Institute",
     "name": "Veblen Institute",
     "url": "https://www.veblen-institute.org/spip.php?page=backend",
-    "category": "rapport",
+    "category": "presse",
     "langue": "français"
   },
   {
@@ -285,7 +285,7 @@
     "platform": "ATTAC",
     "name": "Attac France",
     "url": "https://france.attac.org/spip.php?page=backend",
-    "category": "rapport",
+    "category": "presse",
     "langue": "français"
   },
   {

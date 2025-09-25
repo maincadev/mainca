@@ -46,7 +46,7 @@ def run_worker():
             source_platform=src["platform"],
             default_type="ARTICLE",
             category=src["category"],
-            max_posts=5
+            max_posts=2
             )
 
         
@@ -70,5 +70,4 @@ def run_worker():
     print("✅ Worker terminé : contenus agrégés et stockés.")
 
 if __name__ == "__main__":
-
     run_worker()

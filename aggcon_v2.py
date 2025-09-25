@@ -2,7 +2,7 @@ r"""
 📌 Git pense-bête
 
 4. Récupérer les changements depuis GitHub :
-   git pull origin main   # ou git pull origin main
+cd  # ou git pull origin main
 1. Ajouter tous les fichiers modifiés :
    
 
@@ -269,6 +269,20 @@ def extract_image_from_entry(entry, base_link: str | None):
             return None
         soup = BeautifulSoup(resp.text, "html.parser")
         img = _first_plausible_img_from_soup(soup, base_link)
+        if img:
+            # Vérifier que ce n’est pas une pfp ou un logo
+            try:
+                pfp = extract_profile_image(entry, base_link)
+            except Exception:
+                pfp = None
+            try:
+                logo = extract_logo_institution(entry, base_link)
+            except Exception:
+                logo = None
+
+            if img == pfp or img == logo:
+                print(f"[image] Image ignorée (pfp/logo) sur {base_link}")
+                img = None
         if not img:
             print(f"[image] Aucune image plausible trouvée sur {base_link}")
         return img
@@ -321,7 +335,7 @@ def infer_visualization_from_platform(
     # --- PRESSE / JOURNALISME ---
     if any(k in text for k in {"le monde", "figaro", "guardian", "nytimes",
                                "alternatives économiques", "slate", "mediapart",
-                               "libération", "reporterre", "public sénat"}):
+                               "libération", "reporterre", "public sénat", "Veblen Institute", "attac"}):
         return "presse"
 
     # --- ARTICLES ACADÉMIQUES ---
@@ -334,7 +348,7 @@ def infer_visualization_from_platform(
     if any(k in text for k in {"ocde", "fmi", "imf", "banque mondiale", "onu",
                                "institut montaigne", "ofce", "ifri", "terra nova",
                                "banque de france", "commission européenne", "ec.europa",
-                               "senat", "assemblée nationale", "attac"}):
+                               "senat", "assemblée nationale"}):
         return "rapport"
 
     # --- FORUMS / COMMUNAUTÉS ---
