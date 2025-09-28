@@ -6,8 +6,8 @@ import hashlib
 from sqlalchemy import func
 
 # ---- pondérations ----
-W_FRESH = 0.6    # importance de la fraîcheur
-W_RARE  = 0.3    # importance de la rareté
+W_FRESH = 0.8    # importance de la fraîcheur
+W_RARE  = 0.1    # importance de la rareté
 W_SOCIAL = 0.1   # importance du bonus réseau social
 
 # ---- bonus par type de source ----
@@ -64,17 +64,18 @@ def get_counts_last_days_by_source(session, ContentModel, days=DAYS_WINDOW):
 
 # ---- variabilité quotidienne ----
 
-def daily_random_boost(item_id, day_seed=None):
+def daily_random_boost(item_id, day_seed=None, low=0.5, high=1.5):
     """
     Génère un bruit pseudo-aléatoire stable pour la journée.
-    Chaque jour → feed différent, mais stable dans la journée.
+    - Chaque jour → distribution différente mais stable pour la journée.
+    - Amplitude élargie (par défaut 0.5 → 1.5) pour vraiment brasser le feed.
     """
     if day_seed is None:
         day_seed = datetime.now().strftime("%Y-%m-%d")
     key = f"{day_seed}-{item_id}"
     h = hashlib.sha1(key.encode()).hexdigest()
-    # valeur entre 0.8 et 1.2 (20% de variabilité quotidienne)
-    return 0.8 + (int(h[:8], 16) / 0xFFFFFFFF) * 0.4
+    # valeur entre low et high
+    return low + (int(h[:8], 16) / 0xFFFFFFFF) * (high - low)
 
 # ---- score global ----
 

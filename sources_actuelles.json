@@ -188,7 +188,7 @@
     "type": "rss",
     "platform": "Esprit",
     "name": "Esprit",
-    "url": "https://esprit.presse.fr/rss/news",
+    "url": "https://esprit.presse.fr/rss/news.xml",
     "category": "académique",
     "langue": "français"
   },
@@ -307,7 +307,7 @@
   {
     "type": "rss",
     "platform": "Cairn",
-    "name": "Nouvelles Cahiers du Conseil Constitutionnel",
+    "name": "Notes du conseil d’analyse économique",
     "url": "https://shs.cairn.info/rss/revue/NCAE?lang=fr",
     "category": "académique",
     "langue": "français"
@@ -350,5 +350,104 @@
   { "type": "rss", "platform": "Bluesky", "name": "Annabelle Lallouche", "url": "https://bsky.app/profile/annabellallouch.bsky.social/rss", "category": "card_tweet", "langue": "français" },
   { "type": "rss", "platform": "Bluesky", "name": "Alexis Corbière", "url": "https://bsky.app/profile/alexiscorbiere.bsky.social/rss", "category": "card_tweet", "langue": "français" },
   { "type": "rss", "platform": "Bluesky", "name": "LFI", "url": "https://bsky.app/profile/lfi.bsky.social/rss", "category": "card_tweet", "langue": "français" },
-  { "type": "rss", "platform": "Bluesky", "name": "Écologiste & Social", "url": "https://bsky.app/profile/ecologisteetsocial.fr/rss", "category": "card_tweet", "langue": "français" }
+  { "type": "rss", "platform": "Bluesky", "name": "Écologiste & Social", "url": "https://bsky.app/profile/ecologisteetsocial.fr/rss", "category": "card_tweet", "langue": "français" },
+
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Backseat (Youtube)",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2ijB3_Fg2pIW1g6FeIiYKA",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Alice Cappelle (YouTube)",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCrCTC5_t-HaVJ025DbYITiw",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": " Journal l'Humanité (YouTube)",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCar0yo-PpeMk51m116826pQ",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Elucid (YouTube)",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCkgO4A3Fzm5D9Xu1Y_4vCKQ",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Pure Politique (YouTube)",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCYkZbyXcVmtdRUpCBi713vw",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": " oliSUNvia (YouTube)",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVHxJghKAB_kA_5LMM8MD3w",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "YouTube",
+    "name": "Off Investigation (YouTube)",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCEFGCs68E9Vr5te5qZuJsbg",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Le Monde",
+    "name": "Le Monde - Idées",
+    "url": "https://www.lemonde.fr/idees/rss_full.xml",
+    "category": "presse",
+    "langue": "français"
+  },
+    {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "Hérodote",
+    "url": "https://shs.cairn.info/rss/revue/HER?lang=fr",
+    "category": "académique",
+    "langue": "français",
+    "description": "Revue de géographie et de géopolitique"
+  },
+  {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "Délibérée",
+    "url": "https://droit.cairn.info/rss/revue/DELIB?lang=fr",
+    "category": "académique",
+    "langue": "français",
+    "description": "Revue de réflexion critique animée par le Syndicat de la magistrature"
+  },
+  {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "Revue du MAUSS",
+    "url": "https://shs.cairn.info/rss/revue/RDM1?lang=fr",
+    "category": "académique",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "L'économie politique",
+    "url": "https://shs.cairn.info/rss/revue/LECO?lang=fr",
+    "category": "académique",
+    "langue": "français"
+  }
 ]

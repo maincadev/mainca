@@ -560,6 +560,13 @@ def adapter_rss(source_url: str, source_name: str, source_platform: str, default
     - Déduit le type
     - Tente de récupérer une image pertinente (RSS ou page)
     """
+    # --- liste des sources "prioritaires" pour lesquelles on double la limite ---
+    sources_prioritaires = {"Blast"}
+
+    # si la source est dans cette liste et qu'on a une limite → doubler
+    if max_posts and source_name in sources_prioritaires:
+        max_posts = max_posts * 3
+
     feed = feedparser.parse(source_url)
     contents = []
 
@@ -722,7 +729,7 @@ from style import COMPONENT_CSS, render_item
 
 def show_feed_streamlit():
     session = SessionLocal()
-    st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
+    st.set_page_config(layout="wide", initial_sidebar_state="collapsed", page_title="Polca")
 
     st.title("📱 Mon Feed")
 
