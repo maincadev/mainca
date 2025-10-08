@@ -166,23 +166,110 @@ def truncate(text, max_length=280):
 from datetime import datetime
 from dateutil import parser
 
-def extract_entry_published(entry):
-    """
-    Extrait une date d'un item RSS/Atom-like en essayant, dans l'ordre :
-      1) published_parsed (chaîne)
-      2) updated_parsed   (chaîne)
-      3) date             (chaîne)
+from datetime import datetime
+from dateutil import parser
+from bs4 import BeautifulSoup
+import requests
 
-    Retourne un objet datetime ou None.
+def extract_entry_published(entry, base_link: str | None = None, html_content: str | None = None):
     """
+    Ordre:
+      1) Champs RSS (published_parsed, updated_parsed, date)
+      2) JSON-LD ou meta HTML (si html_content fourni)
+      3) Fallback : heuristique ou date de crawl
+    """
+    # 1️⃣ Champs RSS
     for key in ("published_parsed", "updated_parsed", "date"):
         value = entry.get(key) if isinstance(entry, dict) else getattr(entry, key, None)
-        if isinstance(value, str):
+        if value:
+            if hasattr(value, "tm_year"):  # struct_time (feedparser)
+                return datetime(*value[:6])
+            if isinstance(value, str):
+                try:
+                    return parser.parse(value)
+                except Exception:
+                    pass
+
+    # 2️⃣ Métadonnées HTML (si dispo)
+    if html_content:
+        soup = BeautifulSoup(html_content, "html.parser")
+
+        # a) JSON-LD
+        for script in soup.find_all("script", type="application/ld+json"):
             try:
-                return parser.parse(value)
+                import json
+                data = json.loads(script.string)
+                if isinstance(data, dict) and "datePublished" in data:
+                    return parser.parse(data["datePublished"])
+            except Exception:
+                continue
+
+        # b) Meta HTML classiques
+        for sel in [
+            'meta[property="article:published_time"]',
+            'meta[name="pubdate"]',
+            'meta[name="date"]',
+            'time[datetime]',
+        ]:
+            tag = soup.select_one(sel)
+            if tag:
+                date_str = tag.get("content") or tag.get("datetime")
+                if date_str:
+                    try:
+                        return parser.parse(date_str)
+                    except Exception:
+                        pass
+
+    # 3️⃣ Fallback : heuristique (ex: date dans l'URL)
+    if base_link:
+        # Ex: "https://site.com/2025/10/08/article.html"
+        import re
+        m = re.search(r"/(\d{4})/(\d{1,2})/(\d{1,2})/", base_link)
+        if m:
+            try:
+                y, mth, d = map(int, m.groups())
+                return datetime(y, mth, d)
             except Exception:
                 pass
+
+    # Si aucun HTML n'est fourni, on essaie de le récupérer depuis le lien
+    if not html_content and base_link:
+        try:
+            headers = {"User-Agent": "Mozilla/5.0 (compatible; PolcaBot/1.0; +https://polca.io)"}
+            response = requests.get(base_link, headers=headers, timeout=8)
+            if response.status_code == 200 and "text/html" in response.headers.get("Content-Type", ""):
+                html_content = response.text
+        except Exception as e:
+            print(f"[WARN] Impossible de télécharger {base_link} : {e}")
+            
+
+
+     # 4️⃣ Recherche textuelle : "Page mise à jour le 8 octobre 2025"
+    if html_content:
+        text = BeautifulSoup(html_content, "html.parser").get_text(separator=" ", strip=True)
+
+        # Expressions régulières typiques en français
+        patterns = [
+            r"(?:[Mm]is[e]?\s*à\s*jour\s*(?:le|:)?\s*)(\d{1,2}\s+\w+\s+\d{4})",
+            r"(?:[Pp]ublié\s*(?:le|:)?\s*)(\d{1,2}\s+\w+\s+\d{4})",
+            r"(?:[Mm]odifié\s*(?:le|:)?\s*)(\d{1,2}\s+\w+\s+\d{4})",
+            r"(?:[Ll]e\s*(?:[a-zéû]+\s*)?)(\d{1,2}\s+\w+\s+\d{4})",
+        ]
+
+        for pattern in patterns:
+            m = re.search(pattern, text)
+            if m:
+                try:
+                    return parser.parse(m.group(1), languages=["fr"])
+                except Exception:
+                    try:
+                        return parser.parse(m.group(1))
+                    except Exception:
+                        pass
+
+    # 4️⃣ Rien trouvé → None
     return None
+
 
 
 def _first_plausible_img_from_soup(soup, base_link: str):
@@ -561,7 +648,7 @@ def adapter_rss(source_url: str, source_name: str, source_platform: str, default
     - Tente de récupérer une image pertinente (RSS ou page)
     """
     # --- liste des sources "prioritaires" pour lesquelles on double la limite ---
-    sources_prioritaires = {"Blast"}
+    sources_prioritaires = {"Blast, Oeconomicus"}
 
     # si la source est dans cette liste et qu'on a une limite → doubler
     if max_posts and source_name in sources_prioritaires:
@@ -581,7 +668,7 @@ def adapter_rss(source_url: str, source_name: str, source_platform: str, default
         #et les enregistre dans les variables temporaires  ci-dessous
 
         link = entry.get("link")
-        pub = extract_entry_published(entry)
+        pub = extract_entry_published(entry, link)
         inferred_type = infer_visualization_from_platform(entry.get("title"), source_platform, link, category)
         desc = best_description_for_entry(entry, link)
         
@@ -776,7 +863,6 @@ def show_feed_streamlit():
     for item in final_items:
         
         # Image en tête si dispo
-
         render_item(st, item)
 
         

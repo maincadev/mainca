@@ -248,6 +248,7 @@
     "category": "rapport",
     "langue": "français"
   },
+  
   {
     "type": "rss",
     "platform": "Our World in Data",
@@ -449,5 +450,85 @@
     "url": "https://shs.cairn.info/rss/revue/LECO?lang=fr",
     "category": "académique",
     "langue": "français"
-  }
+  },
+  {
+    "type": "rss",
+    "platform": "Oeconomicus",
+    "name": "Oeconomicus",
+    "url": "https://morss.it/:proxy/https://oeconomicus.fr/",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Revue générale du droit",
+    "name": "Revue générale du droit",
+    "url": "https://morss.it/:proxy/https://www.revuegeneraledudroit.eu/",
+    "category": "rapport",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "MK2",
+    "name": "MK2 Événements",
+    "url": "https://morss.it/:proxy:items=||*[contains(@class,%20%22font-heading%22)%20%20%20and%20contains(@class,%20%22font-light%22)%20%20%20and%20contains(@class,%20%22text-5xl%22)%20%20%20and%20contains(@class,%20%22leading-12%22)%20%20%20and%20contains(@class,%20%22tracking-normal%22)%20%20%20and%20contains(@class,%20%22truncate%22)]/https://www.mk2.com/evenements",
+    "category": "video",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Touteleurope",
+    "name": "Toute l’Europe — Tribune",
+    "url": "https://morss.it/:proxy/https://www.touteleurope.eu/format/tribune/",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
+  "type": "rss",
+  "platform": "Assemblée nationale",
+  "name": "Documents parlementaires — AN",
+  "url": "https://www2.assemblee-nationale.fr/feeds/detail/documents-parlementaires",
+  "category": "rapport",
+  "langue": "français"
+  },
+  {
+  "type": "rss",
+  "platform": "Jacobin",
+  "name": "Jacobin",
+  "url": "https://morss.it/:proxy/https://jacobin.com/",
+  "category": "presse",
+  "langue": "anglais"
+},
+{
+  "type": "rss",
+  "platform": "Institute for New Economic Thinking",
+  "name": "INET Economics",
+  "url": "https://morss.it/:proxy:items=||*[class=title]||a/https://www.ineteconomics.org/",
+  "category": "presse",
+  "langue": "anglais"
+},
+{
+  "type": "rss",
+  "platform": "Bsky Fondation Jaures",
+  "name": "Fondation Jaurès (Bluesky)",
+  "url": "https://bsky.app/profile/fondationjjaures.bsky.social/rss",
+  "category": "card_tweet",
+  "langue": "français"
+},
+{
+  "type": "rss",
+  "platform": "Regards",
+  "name": "Regards",
+  "url": "https://morss.it/:proxy/https://regards.fr/",
+  "category": "presse",
+  "langue": "français"
+},
+{
+    "type": "rss",
+    "platform": "Paul Krugman",
+    "name": "Paul Krugman — Substack",
+    "url": "https://paulkrugman.substack.com/feed",
+    "category": "presse",
+    "langue": "anglais"
+}
 ]

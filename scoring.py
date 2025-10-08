@@ -6,8 +6,8 @@ import hashlib
 from sqlalchemy import func
 
 # ---- pondérations ----
-W_FRESH = 0.8    # importance de la fraîcheur
-W_RARE  = 0.1    # importance de la rareté
+W_FRESH = 0.7    # importance de la fraîcheur
+W_RARE  = 0.2    # importance de la rareté
 W_SOCIAL = 0.1   # importance du bonus réseau social
 
 # ---- bonus par type de source ----
