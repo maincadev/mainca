@@ -818,12 +818,12 @@ def show_feed_streamlit():
     session = SessionLocal()
     st.set_page_config(layout="wide", initial_sidebar_state="collapsed", page_title="Polca")
 
-    st.title("📱 Mon Feed")
+    st.title("\n")
 
 #-----------Choix de plateforme --------------------
     platforms_list = sorted({s["platform"] for s in json.load(open(data_file, encoding="utf-8"))})
     platform_choice = st.selectbox(
-    "Choisir une plateforme",
+    "",
     options=["Toutes"]+platforms_list)
 
     from sqlalchemy import or_
