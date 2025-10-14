@@ -484,51 +484,68 @@
     "langue": "français"
   },
   {
-  "type": "rss",
-  "platform": "Assemblée nationale",
-  "name": "Documents parlementaires — AN",
-  "url": "https://www2.assemblee-nationale.fr/feeds/detail/documents-parlementaires",
-  "category": "rapport",
-  "langue": "français"
+    "type": "rss",
+    "platform": "Assemblée nationale",
+    "name": "Documents parlementaires — AN",
+    "url": "https://www2.assemblee-nationale.fr/feeds/detail/documents-parlementaires",
+    "category": "rapport",
+    "langue": "français"
   },
   {
-  "type": "rss",
-  "platform": "Jacobin",
-  "name": "Jacobin",
-  "url": "https://morss.it/:proxy/https://jacobin.com/",
-  "category": "presse",
-  "langue": "anglais"
-},
-{
-  "type": "rss",
-  "platform": "Institute for New Economic Thinking",
-  "name": "INET Economics",
-  "url": "https://morss.it/:proxy:items=||*[class=title]||a/https://www.ineteconomics.org/",
-  "category": "presse",
-  "langue": "anglais"
-},
-{
-  "type": "rss",
-  "platform": "Bsky Fondation Jaures",
-  "name": "Fondation Jaurès (Bluesky)",
-  "url": "https://bsky.app/profile/fondationjjaures.bsky.social/rss",
-  "category": "card_tweet",
-  "langue": "français"
-},
-{
-  "type": "rss",
-  "platform": "Regards",
-  "name": "Regards",
-  "url": "https://morss.it/:proxy/https://regards.fr/",
-  "category": "presse",
-  "langue": "français"
-},
-{
+    "type": "rss",
+    "platform": "Jacobin",
+    "name": "Jacobin",
+    "url": "https://morss.it/:proxy/https://jacobin.com/",
+    "category": "presse",
+    "langue": "anglais"
+  },
+  {
+    "type": "rss",
+    "platform": "Institute for New Economic Thinking",
+    "name": "INET Economics",
+    "url": "https://morss.it/:proxy:items=||*[class=title]||a/https://www.ineteconomics.org/",
+    "category": "presse",
+    "langue": "anglais"
+  },
+  {
+    "type": "rss",
+    "platform": "Bsky Fondation Jaures",
+    "name": "Fondation Jaurès (Bluesky)",
+    "url": "https://bsky.app/profile/fondationjjaures.bsky.social/rss",
+    "category": "card_tweet",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Regards",
+    "name": "Regards",
+    "url": "https://morss.it/:proxy/https://regards.fr/",
+    "category": "presse",
+    "langue": "français"
+  },
+  {
     "type": "rss",
     "platform": "Paul Krugman",
     "name": "Paul Krugman — Substack",
-    "url": "https://paulkrugman.substack.com/feed",
+    "url": "https://morss.it/:proxy/https://paulkrugman.substack.com/",
     "category": "presse",
     "langue": "anglais"
-}
+  },
+
+  {
+    "type": "rss",
+    "platform": "OFCE",
+    "name": "Blog de l'OFCE",
+    "url": "https://morss.it/:proxy:items=||*[class=no-anchor]/https://www.ofce.sciences-po.fr/blog2024/",
+    "category": "rapport",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "Revue de l’OFCE — Cairn",
+    "url": "https://shs.cairn.info/rss/revue/REOF?lang=fr",
+    "category": "académique",
+    "langue": "français"
+  }  
 ]

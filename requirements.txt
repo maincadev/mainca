@@ -6,3 +6,4 @@ pillow
 feedparser
 beautifulsoup4
 tqdm
+dateparser

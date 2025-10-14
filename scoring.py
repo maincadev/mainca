@@ -10,10 +10,13 @@ W_FRESH = 0.7    # importance de la fraîcheur
 W_RARE  = 0.2    # importance de la rareté
 W_SOCIAL = 0.1   # importance du bonus réseau social
 
-# ---- bonus par type de source ----
-BLUESKY_BONUS = 3.0    # fort boost Bluesky
-SOCIAL_BONUS  = 1.5    # autres réseaux sociaux
-SOCIAL_SOURCES = {"bluesky", "twitter", "mastodon"}
+INSTITUTION_BONUS = 3.0  # fort boost pour sources institutionnelles
+INSTITUTION_SOURCES = {
+    "institute for new economic thinking",
+    "sénat",
+    "assemblée nationale"
+}
+
 
 # ---- autres paramètres ----
 DAYS_WINDOW = 150
@@ -41,13 +44,11 @@ def rarity_score(source, counts_by_source):
     return 1.0 / math.sqrt(c + 1.0)
 
 
-def source_bonus(source: str) -> float:
-    """Boost des réseaux sociaux, avec priorité à Bluesky."""
-    s = (source or "").lower()
-    if "bluesky" in s:
-        return BLUESKY_BONUS
-    if any(net in s for net in SOCIAL_SOURCES):
-        return SOCIAL_BONUS
+def platform_bonus(platform: str) -> float:
+    """Boost des plateformes sociales (toutes égales)."""
+    p = (platform or "").lower()
+    if any(net in p for net in INSTITUTION_SOURCES):
+        return INSTITUTION_BONUS
     return 1.0
 
 
@@ -82,7 +83,7 @@ def daily_random_boost(item_id, day_seed=None, low=0.5, high=1.5):
 def base_score(item, counts_by_source, now=None):
     f = freshness_score(item.published_at, now)
     r = rarity_score(item.source, counts_by_source)
-    b = source_bonus(item.source)
+    b = platform_bonus(item.platform)
     d = daily_random_boost(getattr(item, "id", str(item)))
 
     # Score pondéré

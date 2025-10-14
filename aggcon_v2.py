@@ -1,7 +1,22 @@
 r"""
 📌 Git pense-bête
 
-4. Récupérer les changements depuis GitHub :
+
+
+POUR SELECTIONNER LE REMOTE (dépôt distant) auquel connecter le dossier dans lequel on est (via cd)
+origin est le nom par défaut que Git donne au premier remote ajouté.
+    git init (pour créer un fichier git (historique) dans un dossier local)
+Puis pour connecter le dossier local à un dossier github qui existe déjà 
+    git remote add origin git@github.com-perso:m-ligeret/nom_depot.git
+    git remote add origin git@github.com-mainca:maincadev/nom_depot.git
+
+Pour pull tout  
+    git pull origin main --allow-unrelated-histories
+Pour renommer la branche actuelle 
+    git branch -M main
+
+
+Récupérer les changements depuis GitHub :
 cd  # ou git pull origin main
 1. Ajouter tous les fichiers modifiés :
    
@@ -210,6 +225,8 @@ def extract_entry_published(entry, base_link: str | None = None, html_content: s
             'meta[name="pubdate"]',
             'meta[name="date"]',
             'time[datetime]',
+            'time[date]',
+            'time'
         ]:
             tag = soup.select_one(sel)
             if tag:
@@ -247,13 +264,20 @@ def extract_entry_published(entry, base_link: str | None = None, html_content: s
      # 4️⃣ Recherche textuelle : "Page mise à jour le 8 octobre 2025"
     if html_content:
         text = BeautifulSoup(html_content, "html.parser").get_text(separator=" ", strip=True)
+        WEEKDAYS_FR = r"(?:[Ll]undi|[Mm]ardi|[Mm]ercredi|[Jj]eudi|[Vv]endredi|[Ss]amedi|[Dd]imanche)"
+        MONTH_FR = r"(?:janv\.?|févr\.?|mars|avr\.?|mai|juin|juil\.?|août|sept\.?|oct\.?|nov\.?|déc\.?)"
+        MONTH_EN = r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t\.?|tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
 
         # Expressions régulières typiques en français
         patterns = [
-            r"(?:[Mm]is[e]?\s*à\s*jour\s*(?:le|:)?\s*)(\d{1,2}\s+\w+\s+\d{4})",
-            r"(?:[Pp]ublié\s*(?:le|:)?\s*)(\d{1,2}\s+\w+\s+\d{4})",
-            r"(?:[Mm]odifié\s*(?:le|:)?\s*)(\d{1,2}\s+\w+\s+\d{4})",
-            r"(?:[Ll]e\s*(?:[a-zéû]+\s*)?)(\d{1,2}\s+\w+\s+\d{4})",
+        # FR : avec contexte (publié, déposé, mis à jour, etc.)
+        rf"(?:mis[e]?\s*à\s*jour|publié|modifié|déposé|rédigé|daté)\s*(?:le|:)?\s*(\d{{1,2}}\s+(?:{MONTH_FR})\s+\d{{4}})",
+        # FR : jour de semaine
+        rf"(?:le\s+)?{WEEKDAYS_FR}\s+(\d{{1,2}}\s+(?:{MONTH_FR})\s+\d{{4}})",
+        # FR : simple "le 8 octobre 2025" ou "8 octobre 2025"
+        rf"(?:le\s+)?(\d{{1,2}}\s+(?:{MONTH_FR})\s+\d{{4}})",
+        # EN : "Oct 8, 2025" ou "8 Oct 2025"
+        rf"(\d{{1,2}}\s+(?:{MONTH_EN}),?\s+\d{{4}}|(?:{MONTH_EN})\s+\d{{1,2}},?\s+\d{{4}})",
         ]
 
         for pattern in patterns:
