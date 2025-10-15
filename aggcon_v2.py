@@ -186,7 +186,9 @@ from dateutil import parser
 from bs4 import BeautifulSoup
 import requests
 
-def extract_entry_published(entry, base_link: str | None = None, html_content: str | None = None):
+
+def extract_entry_published(entry=None, base_link: str | None = None, html_content: str | None = None):
+    import re
     """
     Ordre:
       1) Champs RSS (published_parsed, updated_parsed, date)
@@ -226,14 +228,15 @@ def extract_entry_published(entry, base_link: str | None = None, html_content: s
             'meta[name="date"]',
             'time[datetime]',
             'time[date]',
-            'time'
+            'time',
+            'p.date'
         ]:
             tag = soup.select_one(sel)
             if tag:
-                date_str = tag.get("content") or tag.get("datetime")
+                date_str = tag.get("content") or tag.get("datetime") or tag.get("date") or tag.text.strip()
                 if date_str:
                     try:
-                        return parser.parse(date_str)
+                        return parser.parse(date_str, dayfirst=True)
                     except Exception:
                         pass
 
@@ -844,8 +847,10 @@ def show_feed_streamlit():
 
     st.title("\n")
 
-#-----------Choix de plateforme --------------------
-    platforms_list = sorted({s["platform"] for s in json.load(open(data_file, encoding="utf-8"))})
+#-----------Choix de plateforme ou de catégorie --------------------
+#pour revenir au choix de plateforme et pas de catégorie 
+    platforms_list = sorted({s["category"] for s in json.load(open(data_file, encoding="utf-8"))}) #remplacer category par platform  
+
     platform_choice = st.selectbox(
     "",
     options=["Toutes"]+platforms_list)
@@ -854,11 +859,11 @@ def show_feed_streamlit():
 
     if platform_choice == "Toutes":
         items = session.query(Content).filter(
-        ~Content.source.in_(["franceinfo", "Le Monde (YouTube)", "Le Monde - À la Une", "PoliticalDiscussion", "AskSocialScience"]),
+        ~Content.source.in_(["franceinfo", "Le Monde (YouTube)", "Le Monde - À la Une"]),
         or_(Content.platform.is_(None), Content.platform != "France Culture"),
         ).order_by(Content.published_at.desc().nullslast()).limit(200).all()
     else:
-        items = session.query(Content).filter(Content.platform == platform_choice).order_by(Content.published_at.desc().nullslast()).limit(200).all()
+        items = session.query(Content).filter(Content.type == platform_choice).order_by(Content.published_at.desc().nullslast()).limit(200).all() #remplacer Content.type par Content.platform
 #-------------------------------------------------------------------------------------
 
 ##----------- Classement aléatoire ---------------------------------------------------

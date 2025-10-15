@@ -547,5 +547,47 @@
     "url": "https://shs.cairn.info/rss/revue/REOF?lang=fr",
     "category": "académique",
     "langue": "français"
-  }  
+  },
+  {
+    "type": "rss",
+    "platform": "Substack",
+    "name": "Some Unpleasant — Substack",
+    "url": "https://morss.it/:proxy/https://someunpleasant.substack.com/",
+    "category": "presse",
+    "langue": "anglais"
+  },
+  {
+    "type": "rss",
+    "platform": "Substack",
+    "name": "Branko Milanovic — Substack",
+    "url": "https://morss.it/:proxy/https://branko2f7.substack.com/",
+    "category": "presse",
+    "langue": "anglais"
+  },
+  {
+    "type": "rss",
+    "platform": "Noahpinion",
+    "name": "Noahpinion — Blog",
+    "url": "https://morss.it/:proxy/https://www.noahpinion.blog/",
+    "category": "presse",
+    "langue": "anglais"
+  },
+  {
+    "type": "rss",
+    "platform": "Cairn",
+    "name": "Critique — Cairn",
+    "url": "https://shs.cairn.info/rss/revue/CRITI?lang=fr",
+    "category": "académique",
+    "langue": "français"
+  },
+  {
+    "type": "rss",
+    "platform": "Substack",
+    "name": "Personal Canon — Substack",
+    "url": "https://morss.it/:proxy/https://www.personalcanon.com/",
+    "category": "presse",
+    "langue": "anglais"
+  }
+
 ]
+
