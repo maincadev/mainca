@@ -559,15 +559,15 @@
   {
     "type": "rss",
     "platform": "Substack",
-    "name": "Branko Milanovic — Substack",
+    "name": "Branko2f7 — Substack",
     "url": "https://morss.it/:proxy/https://branko2f7.substack.com/",
     "category": "presse",
     "langue": "anglais"
   },
   {
     "type": "rss",
-    "platform": "Noahpinion",
-    "name": "Noahpinion — Blog",
+    "platform": "Substack",
+    "name": "Noahpinion — Substack",
     "url": "https://morss.it/:proxy/https://www.noahpinion.blog/",
     "category": "presse",
     "langue": "anglais"
@@ -588,6 +588,4 @@
     "category": "presse",
     "langue": "anglais"
   }
-
 ]
-
